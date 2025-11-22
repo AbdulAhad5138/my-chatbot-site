@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini AI Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-brain"></i>
+                <span>Gemini Workspace</span>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fa-solid fa-file-pdf"></i> PDF Context</h3>
+                <form id="pdf-form" enctype="multipart/form-data">
+                    <label for="pdf-input" class="file-upload-btn">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> Choose PDF
+                    </label>
+                    <input type="file" id="pdf-input" accept="application/pdf" hidden />
+                    <div id="pdf-filename" class="file-name">No file chosen</div>
+                    <button type="submit" class="primary-btn sm-btn">Upload</button>
+                </form>
+                <div id="pdf-status" class="status-msg"></div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fa-solid fa-toolbox"></i> Integrated Tools</h3>
+                <div class="tools-list">
+                    <div class="tool-item"><i class="fa-brands fa-wikipedia-w"></i> Wikipedia</div>
+                    <div class="tool-item"><i class="fa-solid fa-globe"></i> DuckDuckGo</div>
+                    <div class="tool-item"><i class="fa-solid fa-graduation-cap"></i> arXiv</div>
+                    <div class="tool-item"><i class="fa-solid fa-bolt"></i> Groq AI</div>
+                    <div class="tool-item"><i class="fa-solid fa-file-pdf"></i> PDF Analysis</div>
+                </div>
+                <p class="sidebar-note">The AI automatically searches all these sources to find the best answer for you.
+                </p>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-interface">
+            <header class="chat-header">
+                <h2>AI Assistant</h2>
+                <div class="toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" id="use-pdf" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <span>Use Context</span>
+                </div>
+            </header>
+
+            <div id="chat-box" class="chat-history">
+                <div class="message bot">
+                    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="content">Hello! I'm your Gemini AI assistant. I will search across Wikipedia, the Web,
+                        Academic Papers, and ChatGPT to find the best answer for you.</div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div id="agent-context-status" class="context-indicator"></div>
+                <form id="chat-form">
+                    <div class="input-wrapper">
+                        <input type="text" id="user-input" placeholder="Ask anything..." autocomplete="off" required />
+                        <button type="submit" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
