@@ -1,0 +1,10 @@
+flask
+flask-cors
+requests
+python-dotenv
+google-generativeai
+PyPDF2
+wikipedia
+duckduckgo-search
+arxiv
+openai
