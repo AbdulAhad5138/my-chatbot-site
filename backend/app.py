@@ -19,7 +19,7 @@ CORS(app)
 
 # Configure Gemini API
 # Try to get key from environment variable, fallback to hardcoded (for now, but warn user)
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or "AIzaSyDhmy5OnMw73B-A2Tt4ztANNdKuR7rBzpE"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or "Enter you api key here."
 
 if not GEMINI_API_KEY:
     print("Warning: GEMINI_API_KEY not found. Please set it in a .env file.")
